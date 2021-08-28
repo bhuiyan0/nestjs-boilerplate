@@ -13,7 +13,8 @@
 
 ### Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+A production ready scalable NestJS boilerplate for building efficient, scalable Node.js server-side applications.
+
 
 ### Installation
 
