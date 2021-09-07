@@ -1,4 +1,5 @@
 import { User } from 'modules/user/entities/user.entity';
+import { GeneratorService } from 'shared/services/generator.service';
 import type {EntitySubscriberInterface,InsertEvent, UpdateEvent} from 'typeorm';
 import { EventSubscriber } from 'typeorm';
 import { UtilsProvider } from '../providers/utils.provider';
@@ -11,13 +12,13 @@ export class UserSubscriber implements EntitySubscriberInterface<User> {
 
   beforeInsert(event: InsertEvent<User>): void {	  
     if (event.entity.password) {
-      event.entity.password = UtilsProvider.generateHash(event.entity.password);
+      event.entity.password = GeneratorService.generateHash(event.entity.password);
     }
   }
 
   beforeUpdate(event: UpdateEvent<User>): void {
     if (event.entity.password && event.entity.password !== event.databaseEntity.password) {
-      event.entity.password = UtilsProvider.generateHash(event.entity.password);
+      event.entity.password = GeneratorService.generateHash(event.entity.password);
     }
   }
 }

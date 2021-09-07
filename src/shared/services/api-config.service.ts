@@ -25,7 +25,7 @@ export class ApiConfigService {
 		return value && value =='true' ? true : false;
 	}
 
-	private getString(key: string, defaultValue?: string): string {
+	public getString(key: string, defaultValue?: string): string {
 		const value = this.configService.get(key, defaultValue);
 		if (!value) {
 			return;

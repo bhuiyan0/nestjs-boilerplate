@@ -3,8 +3,10 @@ import { ApiConfigService } from './services/api-config.service';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import * as redisStore from 'cache-manager-redis-store';
 import { RedisCacheService } from './services/redis-cache.service';
+import { NotificationService } from './services/notification.service';
+import { GeneratorService } from './services/generator.service';
 
-const providers = [ApiConfigService, RedisCacheService];
+const providers = [ApiConfigService, RedisCacheService,NotificationService,GeneratorService];
 @Global()
 @Module({
 	providers,

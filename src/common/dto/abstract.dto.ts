@@ -18,5 +18,5 @@ export class AbstractDto {
   updatedBy?: number;
 
   @ApiPropertyOptional()
-  status?: boolean;
+  isActive?: boolean;
 }
