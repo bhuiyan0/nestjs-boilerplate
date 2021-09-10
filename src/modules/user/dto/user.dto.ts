@@ -71,7 +71,6 @@ export class UserCreateDto {
 
 
 export class UserUpdateDto {
-
 	@IsOptional()
 	@ApiPropertyOptional()
 	name?: string;

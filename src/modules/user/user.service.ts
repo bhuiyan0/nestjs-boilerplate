@@ -179,6 +179,7 @@ export class UserService {
 		}
 	}
 
+	
 	async changePassword(id: number, body: ChangePasswordDto) {
 		try {
 			const user = await this.userRepository.findOne(id);

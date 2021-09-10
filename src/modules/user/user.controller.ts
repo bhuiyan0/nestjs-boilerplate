@@ -39,7 +39,6 @@ export class UserController {
 	@UseGuards(AuthGuard)
 	async update(@AuthUser() user: User, @Body() body: UserUpdateDto) {
 		console.log('user update auth user', user);
-		
 		return this.userService.update(+user.id,body);
 	}
 	
